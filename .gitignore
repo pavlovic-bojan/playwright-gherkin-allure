@@ -1,8 +1,0 @@
-node_modules/
-output/
-*.log
-.DS_Store
-.env
-allure-results/
-allure-report/
-*.tsbuildinfo
