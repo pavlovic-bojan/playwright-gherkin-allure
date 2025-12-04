@@ -5,6 +5,7 @@ on:
     branches: [ main, develop ]
   pull_request:
     branches: [ main, develop ]
+  workflow_dispatch:
 
 jobs:
   test:
@@ -80,4 +81,3 @@ jobs:
         publish_dir: ./allure-report
         publish_branch: gh-pages
         destination_dir: ./
-
