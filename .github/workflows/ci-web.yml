@@ -79,3 +79,9 @@ jobs:
         publish_branch: gh-pages
         destination_dir: ./web
 
+    - name: Report Allure Report URL
+      if: always() && github.ref == 'refs/heads/main'
+      run: |
+        echo "📊 Allure Report (Web Tests) deployed to GitHub Pages"
+        echo "🔗 View report at: https://pavlovic-bojan.github.io/playwright-gherkin-allure/web/"
+

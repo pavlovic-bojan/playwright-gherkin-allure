@@ -81,3 +81,9 @@ jobs:
         publish_dir: ./allure-report
         publish_branch: gh-pages
         destination_dir: ./
+
+    - name: Report Allure Report URL
+      if: always() && github.ref == 'refs/heads/main'
+      run: |
+        echo "📊 Allure Report deployed to GitHub Pages"
+        echo "🔗 View report at: https://pavlovic-bojan.github.io/playwright-gherkin-allure/"

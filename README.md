@@ -1,6 +1,10 @@
 # Playwright + CodeceptJS + Gherkin + Allure Test Automation Framework
 
+[![Latest Allure Report](https://img.shields.io/badge/Allure%20Report-Latest-blue)](https://pavlovic-bojan.github.io/playwright-gherkin-allure/)
+
 This is a comprehensive test automation framework built with **CodeceptJS**, **Playwright**, **TypeScript**, **Gherkin**, and **Allure Reporting**. The framework includes both **Web UI** and **API** test automation suites.
+
+📊 **Latest Allure Report**: [View Online](https://pavlovic-bojan.github.io/playwright-gherkin-allure/)
 
 ## 📋 Table of Contents
 
@@ -258,15 +262,23 @@ npm run test:api:report
 
 ## 📊 Allure Reports
 
-### Generate Allure Report
+### View Latest Report Online
 
-After running tests, generate the Allure report:
+The latest Allure report from CI/CD pipeline is automatically deployed to GitHub Pages and available at:
+
+🌐 **[https://pavlovic-bojan.github.io/playwright-gherkin-allure/](https://pavlovic-bojan.github.io/playwright-gherkin-allure/)**
+
+This report is updated automatically after each successful workflow run on the `main` branch.
+
+### Generate Allure Report Locally
+
+After running tests locally, generate the Allure report:
 
 ```bash
 npm run allure:generate
 ```
 
-### Open Allure Report
+### Open Allure Report Locally
 
 Open the generated report in your default browser:
 
@@ -339,20 +351,36 @@ The report will be available at `http://localhost:XXXX` (port will be shown in t
 
 ## 🚀 CI/CD with GitHub Actions
 
-This project includes a GitHub Actions workflow for continuous integration. The workflow automatically runs tests on every push and pull request to `main` or `develop` branches.
+This project includes GitHub Actions workflows for continuous integration. The workflows automatically run tests on every push and pull request to `main` or `develop` branches.
+
+### Available Workflows
+
+The project includes three separate workflows located in `.github/workflows/`:
+
+1. **Run All Tests** (`ci.yml`) - Runs both Web and API tests
+   - Latest report: [https://pavlovic-bojan.github.io/playwright-gherkin-allure/](https://pavlovic-bojan.github.io/playwright-gherkin-allure/)
+
+2. **Run Web Tests** (`ci-web.yml`) - Runs only Web UI tests
+   - Latest report: [https://pavlovic-bojan.github.io/playwright-gherkin-allure/web/](https://pavlovic-bojan.github.io/playwright-gherkin-allure/web/)
+
+3. **Run API Tests** (`ci-api.yml`) - Runs only API tests
+   - Latest report: [https://pavlovic-bojan.github.io/playwright-gherkin-allure/api/](https://pavlovic-bojan.github.io/playwright-gherkin-allure/api/)
+
+All workflows can be triggered manually via the GitHub Actions UI or automatically on push/PR.
 
 ### Workflow Configuration
 
-The workflow file is located at `.github/workflows/ci.yml` and performs the following:
+Each workflow performs the following steps:
 
 1. **Checkout Code** - Retrieves the latest code from repository
-2. **Setup Node.js** - Installs Node.js 18 with npm caching
+2. **Setup Node.js** - Installs Node.js 20 with npm caching
 3. **Setup Java** - Installs Java 17 (required for Allure Reports)
 4. **Install Dependencies** - Runs `npm ci` to install all dependencies
-5. **Install Playwright Browsers** - Installs Chromium browser
-6. **Run Tests** - Executes all tests with environment variables
+5. **Install Playwright Browsers** - Installs Chromium browser (Web tests only)
+6. **Run Tests** - Executes tests with environment variables
 7. **Generate Allure Report** - Creates Allure report from test results
 8. **Upload Artifacts** - Uploads Allure report and test results as artifacts
+9. **Deploy to GitHub Pages** - Automatically deploys report to GitHub Pages (main branch only)
 
 ### Environment Variables in CI/CD
 
@@ -374,10 +402,16 @@ The workflow uses GitHub Secrets for sensitive configuration. You can set these 
 ### Viewing CI/CD Results
 
 After a workflow runs:
-1. Go to the **Actions** tab in your GitHub repository
-2. Click on the workflow run to see details
-3. Download **allure-report** artifact to view the Allure report locally
-4. Download **test-results** artifact to see detailed test output
+
+1. **View Report Online**: The latest Allure report is automatically deployed to GitHub Pages:
+   - All Tests: [https://pavlovic-bojan.github.io/playwright-gherkin-allure/](https://pavlovic-bojan.github.io/playwright-gherkin-allure/)
+   - Web Tests: [https://pavlovic-bojan.github.io/playwright-gherkin-allure/web/](https://pavlovic-bojan.github.io/playwright-gherkin-allure/web/)
+   - API Tests: [https://pavlovic-bojan.github.io/playwright-gherkin-allure/api/](https://pavlovic-bojan.github.io/playwright-gherkin-allure/api/)
+
+2. **Download Artifacts**: Go to the **Actions** tab in your GitHub repository:
+   - Click on the workflow run to see details
+   - Download **allure-report** artifact to view the Allure report locally
+   - Download **test-results** artifact to see detailed test output
 
 ### Running CI/CD Locally
 
