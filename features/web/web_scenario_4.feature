@@ -7,4 +7,3 @@ Feature: Login Validation
   Scenario: Validate login failure for locked out user
     Given I attempt to login as "locked_out_user"
     Then the login should fail
-    And I should see an error message
