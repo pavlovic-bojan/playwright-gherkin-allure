@@ -65,7 +65,7 @@ playwright-gherkin-allure/
 │   ├── webHelper.ts           # Web locator helpers
 │   └── apiHelper.ts           # API helper functions
 ├── scripts/                    # Utility scripts
-│   └── allure-serve.js        # Allure server wrapper for Windows
+│   └── allure-serve.ts        # Allure server wrapper for Windows (TypeScript)
 ├── .github/                    # GitHub Actions workflows
 │   └── workflows/
 │       └── ci.yml             # CI/CD pipeline configuration
@@ -147,7 +147,7 @@ You should see output showing the Java version (e.g., `java 17.0.12` or `java 21
 
 ### Step 4: Allure Commandline
 
-Allure commandline is already included as a dev dependency in this project. The framework uses `npx allure` commands or a custom wrapper script (`scripts/allure-serve.js`) that automatically handles the Allure JAR file.
+Allure commandline is already included as a dev dependency in this project. The framework uses `npx allure` commands or a custom TypeScript wrapper script (`scripts/allure-serve.ts`) that automatically handles the Allure JAR file.
 
 **No additional installation is required!** The framework will work out of the box after installing dependencies.
 
@@ -296,7 +296,7 @@ npm run allure:serve
 
 The report will be available at `http://localhost:XXXX` (port will be shown in terminal).
 
-**Note:** On Windows systems with paths containing spaces, the framework uses a custom wrapper script (`scripts/allure-serve.js`) to ensure Allure server starts correctly. This script automatically finds the Allure JAR file and handles path escaping.
+**Note:** On Windows systems with paths containing spaces, the framework uses a custom TypeScript wrapper script (`scripts/allure-serve.ts`) to ensure Allure server starts correctly. This script automatically finds the Allure JAR file and handles path escaping. The script is executed using `ts-node`.
 
 ## 📝 Test Scenarios
 
