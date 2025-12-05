@@ -1,5 +1,0 @@
-"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
-"","6941","Validate login failure for locked out user","","Fri Dec 05 07:19:06 UTC 2025","passed","Fri Dec 05 07:19:13 UTC 2025","","Login Validation @web:","Login Validation @web:","Validate login failure for locked out user"
-"","22927","Add all items, remove third item, and complete purchase","","Fri Dec 05 07:19:36 UTC 2025","passed","Fri Dec 05 07:19:59 UTC 2025","","Complete Purchase Flow @web:","Complete Purchase Flow @web:","Add all items, remove third item, and complete purchase"
-"","7830","Sort products by name and validate","","Fri Dec 05 07:19:13 UTC 2025","passed","Fri Dec 05 07:19:20 UTC 2025","","Sort Products @web:","Sort Products @web:","Sort products by name and validate"
-"","15884","Find item by name and add to cart from item page","","Fri Dec 05 07:19:21 UTC 2025","failed","Fri Dec 05 07:19:36 UTC 2025","","Add Item to Cart from Item Page @web:","Add Item to Cart from Item Page @web:","Find item by name and add to cart from item page"
