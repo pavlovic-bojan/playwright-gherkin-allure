@@ -14,7 +14,7 @@
     "test:api:report": "codeceptjs run --grep '@api' --plugins allure && npm run allure:generate && npm run allure:open",
     "allure:generate": "npx allure generate output/allure --clean",
     "allure:open": "npx allure open allure-report",
-    "allure:serve": "node scripts/allure-serve.js"
+    "allure:serve": "ts-node scripts/allure-serve.ts"
   },
   "keywords": [
     "codeceptjs",
